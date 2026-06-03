@@ -1,0 +1,43 @@
+     body{
+        font-family: Poppins;
+     }
+     .name{
+        text-align: center;
+        color: #1a202c;
+        margin-bottom: 5px;
+        font-size: 28px;
+      }
+      .career{
+        text-align: center;
+        color: #2563eb;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+      .subtitle{
+        color: #1a202c;
+        border-left: 5px solid #2563eb;
+        padding-left: 15px;
+      }
+      .sublist{
+        list-style: none;
+        padding: 0;
+        margin-left: 20px;
+      }
+      .subtext{
+        background: #f9fafb;
+        margin-bottom: 8px;
+        padding: 10px;
+        border-radius: 5px;
+        outline: 2px solid #bbbbbb;
+
+      }
+      .profile-pic{
+        width: 150px;
+        height: 150px;
+        object-fit: cover; /* Prevents the image from stretching/squishing */
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+
+      }
