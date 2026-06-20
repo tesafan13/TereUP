@@ -102,4 +102,32 @@
      .info ul {
        margin-bottom: 0;
      }
+     .location-container {
+       display: flex;
+       justify-content: center;
+       gap: 10px;
+       color: #000000;
+       font-size: 16px;
+       margin-top: 15px;
+     }
+     .video-loop {
+       width: 100%;
+       border-radius: 8px;
+     }
+     .contenedor-logos {
+       display: flex;
+       gap: 20px;
+       justify-content: center;
+     }
+     .video-loop-cover {
+       height: 100%;
+       width: 100%;
+     }
+     .contenedor-posters {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       grid-template-rows: 1fr;
+       grid-column-gap: 5px;
+       grid-row-gap: 0px;
+     }
 
