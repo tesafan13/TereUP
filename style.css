@@ -130,8 +130,8 @@
        grid-column-gap: 5px;
        grid-row-gap: 0px;
      }
-     .parent2 .carousel-control-prev-icon,
-     .parent2 .carousel-control-next-icon {
+     .carousel-control-prev-icon,
+     .carousel-control-next-icon {
        filter: invert(33%) sepia(13%) saturate(940%) hue-rotate(182deg)
          brightness(93%) contrast(88%);
      }
