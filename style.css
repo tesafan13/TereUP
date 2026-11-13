@@ -1,146 +1,508 @@
-     body{
-        font-family: Poppins;
-     }
-     .name{
-        text-align: center;
-        color: #1a202c;
-        margin-bottom: 5px;
-        font-size: 28px;
-      }
-     .text {
-       text-align: center;
-       font-weight: 400;
-       font-size: 18px;
-       padding: 20px;
-     }
-      .career{
-        text-align: center;
-        color: #2563eb;
-        font-weight: 400;
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
-      .subtitle{
-        color: #1a202c;
-        border-left: 5px solid #2563eb;
-        padding-left: 15px;
-      }
-      .sublist{
-        list-style: none;
-        padding: 0;
-        margin-left: 20px;
-      }
-      .subtext{
-        background: #f9fafb;
-        margin-bottom: 8px;
-        padding: 10px;
-        border-radius: 5px;
-        outline: 2px solid #bbbbbb;
+     body {
+  font-family: "Poppins", sans-serif;
+}
 
-      }
-      .profile-pic{
-        width: 150px;
-        height: 150px;
-        object-fit: cover; 
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto;
+.hero {
+  background-image: url("./Images/fondoPorta.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 56px); /* alto de pantalla menos la navbar */
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
 
-      }
-     .navbar-nav .nav-link.active {
-        border-bottom: 2px solid #000;
-        padding-bottom: 2px;
-     }
+.hero > .container-fluid {
+  width: 100%;
+  isolation: isolate;
+}
 
-     @media (min-width: 768px) {
-       .parent {
-         display: grid;
-         grid-template-columns: repeat(2, 1fr);
-         grid-template-rows: repeat(2, auto);
-         gap: 50px;
-       }
-       .parent2 {
-         display: grid;
-         grid-template-columns: repeat(4, 1fr);
-         grid-template-rows: repeat(1, auto);
-         gap: 50px;
-       } 
-     }
-     @media (max-width: 767px) {
-       .parent {
-         display: grid;
-         grid-template-columns: 1fr;
-         gap: 20px;
-         align-items: start;
-       }
-       .parent2 {
-         display: grid;
-         grid-template-columns: 1fr;
-         gap: 20px;
-       }  
-     }
-     .btn-lista {
-       background-color: #f9fafb;
-       border: 2px solid #bbbbbb;
-       border-radius: 5px;
-       margin-bottom: 3px;
-       padding: 10px;
-       width: 100%;
-     }
-     .btn-lista:hover {
-       background: #e5e5e5;
-       border: 2px solid #575757;
-     }
+/* Foto más grande */
+.profile-pic {
+  width: min(460px, 80vw);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 10px solid #fcfaff;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+}
 
-     .info {
-       background-color: #ffffff;
-       border-left: 4px solid #004cbe;
-       margin: 0px 0px 0px 20px;
-       padding: 0px 25px;
-       font-size: 15px;
-     }
-     .info ul {
-       margin-bottom: 0;
-     }
-     .location-container {
-       display: flex;
-       justify-content: center;
-       gap: 10px;
-       color: #000000;
-       font-size: 16px;
-       margin-top: 15px;
-     }
-     .video-loop {
-       width: 100%;
-       border-radius: 8px;
-     }
-     .contenedor-logos {
-       display: flex;
-       gap: 20px;
-       justify-content: center;
-     }
-     .video-loop-cover {
-       height: 100%;
-       width: 100%;
-     }
-     .contenedor-posters {
-       display: grid;
-       grid-template-columns: repeat(3, 1fr);
-       grid-template-rows: 1fr;
-       grid-column-gap: 5px;
-       grid-row-gap: 0px;
-     }
-     .carousel-control-prev-icon,
-     .carousel-control-next-icon {
-       filter: invert(33%) sepia(13%) saturate(940%) hue-rotate(182deg)
-         brightness(93%) contrast(88%);
-     }
-     .carousel-contenedor {
-       margin: 0 auto;
-     }
-     .carousel-contenedor .carousel-item img {
-       height: 450px;
-       width: auto;
-       object-fit: contain;
-     }
+/* Controla la distancia entre la foto y el texto */
+.hero-row {
+  column-gap: 100px; /* sube o baja este valor para acercar o alejar */
+}
 
+.hero-text {
+  position: relative; /* sin isolation aquí */
+  max-width: 720px;
+  padding: 50px 56px;
+  background: #fcfaff;
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(45, 27, 105, 0.25);
+}
+
+/* Rectángulo morado detrás, desplazado arriba y a la derecha */
+
+/* Textos más grandes */
+.hero-hello {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: #2d1b69;
+}
+
+.hero-name {
+  margin: 0 0 14px;
+  font-size: clamp(4.5rem, 11vw, 9rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: #2d1b69;
+}
+
+.hero-role {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #2d1b69;
+}
+
+.hero-tags {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  color: #2d1b69;
+  margin-bottom: 14px;
+}
+
+.hero-desc {
+  max-width: 560px;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: #3f3470;
+}
+
+.card-h {
+  flex-direction: row; /* imagen a la izquierda, texto a la derecha */
+  align-items: center;
+  gap: 24px;
+  padding: 20px 24px;
+  border: 1px solid #ece6fb;
+  border-radius: 20px;
+  background: #fcfaff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-h:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(91, 58, 180, 0.18);
+}
+
+.card-h-img {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0; /* la imagen no se encoge */
+  object-fit: contain;
+}
+
+.card-h-body {
+  flex: 1;
+}
+
+.card-h-title {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.card-h-title a {
+  color: #2d1b69;
+  text-decoration: none;
+}
+
+.card-h-text {
+  margin: 0;
+  color: #4b3f72;
+}
+
+.card-h-arrow {
+  align-self: flex-end; /* la flecha queda abajo a la derecha */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e6dcfb;
+  color: #6d3fd6;
+  font-size: 1.3rem;
+  transition: background 0.2s ease;
+}
+
+.card-h:hover .card-h-arrow {
+  background: #d3c0f7;
+}
+
+/* En pantallas pequeñas la imagen se reduce */
+@media (max-width: 576px) {
+  .card-h-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.navbar .nav-link {
+  position: relative;
+  color: #2d1b69;
+  font-weight: 500;
+}
+
+.navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0;
+  height: 2px;
+  background: #6d3fd6;
+  border-radius: 2px;
+  transform: scaleX(0); /* oculto por defecto */
+  transition: transform 0.2s ease;
+}
+
+.navbar .nav-link:hover::before,
+.navbar .nav-link.active::before {
+  transform: scaleX(1); /* visible en hover y en la página actual */
+}
+
+.navbar .nav-link.active {
+  color: #2d1b69;
+  font-weight: 600;
+}
+.cards-section {
+  background-color: #f3ecff;
+  padding: 40px 0;
+}
+.main-nav {
+  background-color: #f3ecff;
+}
+
+.site-footer {
+  background-color: #470d74; /* morado oscuro, el mismo de tus títulos */
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px 30px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 0;
+  margin-bottom: 24px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 24px;
+}
+
+/* Separador vertical entre enlaces */
+.footer-links a + a {
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.footer-links a:hover {
+  color: #d3c0f7; /* lavanda al pasar el cursor */
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* En pantallas chicas los enlaces se apilan, sin separador */
+@media (max-width: 576px) {
+  .footer-links {
+    flex-direction: column;
+  }
+  .footer-links a + a {
+    border-left: none;
+  }
+}
+
+.page-hero {
+  background-image: url("./Images/fondoPorta.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-hero-box {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px 20px;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(45, 27, 105, 0.25);
+  text-align: center;
+}
+
+.page-hero-box h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #2d1b69;
+}
+
+.page-hero-box p {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #4b3f72;
+}
+.back-section {
+  background-color: #f3ecff;
+  padding: 28px 0 0;
+}
+
+/* Extras para usar .card-h-arrow como enlace independiente */
+a.card-h-arrow {
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+a.card-h-arrow:hover {
+  background: #d3c0f7; /* mismo color que el hover de las cards */
+  color: #6d3fd6;
+  transform: translateX(-3px); /* la flecha "se asoma" hacia atrás */
+}
+.gallery-section {
+  background-color: #f3ecff; /* continúa la franja lavanda de la flecha */
+  padding: 20px 0 30px;
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #2d1b69;
+}
+
+/* Línea de acento bajo el título */
+.subtitle::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: #6d3fd6;
+}
+
+.parent2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.parent2 > .carousel,
+.single-gallery > .carousel {
+  min-width: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(45, 27, 105, 0.15);
+}
+
+/* Imágenes cuadradas */
+.parent2 .carousel-item img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.single-gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Evita que se acumule el espacio entre secciones consecutivas */
+.gallery-section + .gallery-section {
+  padding-top: 0;
+}
+@media (max-width: 1199px) {
+  .parent2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .parent2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e6e6e6'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e6e6e6'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Sombra oscura para que se lea sobre cualquier imagen */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8));
+}
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+.contenedor-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.video-card {
+  min-width: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(45, 27, 105, 0.15);
+  background: #fff;
+}
+
+.video-loop {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 991px) {
+  .contenedor-logos {
+    grid-template-columns: 1fr; /* apilados en tablet y celular */
+  }
+}
+/* Carrusel con altura fija para imágenes de distintos tamaños */
+.carousel-fixed .carousel-item {
+  background: #fff; /* color de las franjas */
+}
+
+.carousel-fixed .carousel-item img {
+  width: 100%;
+  height: var(--carousel-h, clamp(260px, 45vw, 450px)); /* valor por defecto */
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Primer carrusel: más alto */
+.carousel-tall {
+  --carousel-h: clamp(320px, 60vw, 650px);
+}
+
+/* Segundo carrusel: imágenes cuadradas con altura máxima */
+.carousel-compact {
+  --carousel-h: clamp(320px, 40vw, 590px);
+}
+
+/* Ancho máximo propio para el carrusel de imágenes cuadradas */
+.single-gallery--narrow {
+  max-width: 600px;
+}
+
+.single-gallery--wide {
+  max-width: 900px;
+}
+.single-image {
+  max-width: 900px; /* ancho máximo, igual que el carrusel ancho */
+  margin: 0 auto;
+}
+
+.single-image img {
+  display: block;
+  width: 100%;
+  height: auto; /* respeta la proporción original */
+  max-height: 600px; /* altura máxima */
+  object-fit: contain; /* se ve completa, sin recortes */
+  margin: 0 auto;
+  border-radius: 20px;
+}
+.pair-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* dos columnas en pantallas grandes */
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cada carrusel llena su columna en lugar de usar su ancho máximo propio */
+.pair-gallery > .single-gallery {
+  max-width: none;
+  margin: 0;
+  min-width: 0; /* evita que una imagen grande desborde la columna */
+}
+
+/* En tablet y celular: uno debajo del otro */
+@media (max-width: 991px) {
+  .pair-gallery {
+    grid-template-columns: 1fr;
+    max-width: 600px; /* mismo ancho que tenían apilados */
+  }
+}
+.video-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.video-item {
+  flex: var(--flex-w, 1) 1 0%;
+  min-width: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(45, 27, 105, 0.15);
+}
+
+.video-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 575px) {
+  .video-row {
+    gap: 8px;
+  }
+  .video-item {
+    border-radius: 10px;
+  }
+}
+/* Contenedor específico para cuando hay un solo video */
+.single-video-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Controla el tamaño del bloque del video según su formato */
+.single-video-wrapper .video-item {
+  width: 100%;
+  max-width: 700px; /* <-- Ancho máximo ideal. Puedes subirlo a 900px si es horizontal, o bajarlo a 450px si es vertical/story */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(45, 27, 105, 0.15);
+}
+
+.single-video-wrapper .video-item video {
+  display: block;
+  width: 100%;
+  height: auto; /* Respeta la proporción natural del video (cuadrado, horizontal o vertical) */
+}
