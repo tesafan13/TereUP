@@ -1,4 +1,4 @@
-     body {
+body {
   font-family: "Poppins", sans-serif;
 }
 
@@ -266,10 +266,13 @@
   color: #4b3f72;
 }
 .back-section {
+  background-color: #ffffff;
+  padding: 28px 0 0;
+}
+.bac-section {
   background-color: #f3ecff;
   padding: 28px 0 0;
 }
-
 /* Extras para usar .card-h-arrow como enlace independiente */
 a.card-h-arrow {
   text-decoration: none;
@@ -284,7 +287,7 @@ a.card-h-arrow:hover {
   transform: translateX(-3px); /* la flecha "se asoma" hacia atrás */
 }
 .gallery-section {
-  background-color: #f3ecff; /* continúa la franja lavanda de la flecha */
+  background-color: #ffffff; /* continúa la franja lavanda de la flecha */
   padding: 20px 0 30px;
 }
 
@@ -505,4 +508,406 @@ a.card-h-arrow:hover {
   display: block;
   width: 100%;
   height: auto; /* Respeta la proporción natural del video (cuadrado, horizontal o vertical) */
+}
+/* =====================================================
+   CV: pega todo este bloque al final de tu style.css
+   (reutiliza .page-hero, .gallery-section, .subtitle y
+   .site-footer que ya tienes)
+   ===================================================== */
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #4b3f72;
+}
+
+.cv-contact a {
+  color: #4b3f72;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cv-contact a:hover {
+  color: #6d3fd6;
+  border-bottom-color: #6d3fd6;
+}
+
+/* ---------- Distribución ---------- */
+.cv-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.cv-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.cv-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.cv-card {
+  padding: 32px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(45, 27, 105, 0.12);
+}
+
+.cv-card .subtitle {
+  margin-bottom: 22px;
+  font-size: 1.5rem;
+}
+
+.cv-profile {
+  margin: 0;
+  color: #3f3470;
+  line-height: 1.7;
+}
+
+/* ---------- Línea de tiempo (experiencia y educación) ---------- */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 30px;
+  list-style: none;
+}
+
+/* Línea vertical */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 2px;
+  background: #e6dcfb;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Punto de cada entrada */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -30px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6d3fd6;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #e6dcfb;
+}
+
+.cv-date {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6d3fd6;
+}
+
+.cv-role {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2d1b69;
+}
+
+.cv-org {
+  margin: 2px 0 0;
+  color: #4b3f72;
+}
+
+.cv-detail {
+  margin: 8px 0 0;
+  color: #3f3470;
+}
+
+/* ---------- Tareas con herramientas ---------- */
+.cv-tasks {
+  margin: 14px 0 0;
+  padding-left: 1.1rem;
+  color: #3f3470;
+}
+
+.cv-tasks > li {
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.cv-tasks > li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-tasks > li::marker {
+  color: #6d3fd6;
+}
+
+.cv-tasks strong {
+  font-weight: 600;
+  color: #2d1b69;
+}
+
+.cv-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.cv-tools span {
+  padding: 3px 11px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #4b3f72;
+  background: #f3ecff;
+  border-radius: 999px;
+}
+
+/* ---------- Software: el nivel se distingue por el relleno ---------- */
+.cv-group {
+  margin: 22px 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d1b69;
+}
+
+.cv-group:first-of-type {
+  margin-top: 0;
+}
+
+.skill-list,
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 999px;
+}
+
+.skill small {
+  font-size: 0.72rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Avanzado: relleno morado oscuro */
+.lvl-adv {
+  background: #2d1b69;
+  color: #fff;
+}
+
+/* Intermedio: relleno lavanda */
+.lvl-int {
+  background: #e6dcfb;
+  color: #2d1b69;
+}
+
+/* Básico: solo contorno */
+.lvl-bas {
+  background: #fff;
+  color: #4b3f72;
+  border: 1px solid #cbbcf0;
+}
+
+/* ---------- Idiomas ---------- */
+.lang-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lang-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0e9fc;
+  color: #4b3f72;
+}
+
+.lang-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.lang-list li:first-child {
+  padding-top: 0;
+}
+
+.lang-list strong {
+  font-weight: 600;
+  color: #2d1b69;
+}
+
+.lang-list span {
+  text-align: right;
+}
+
+/* ---------- Habilidades blandas e intereses ---------- */
+.chip-list li {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d1b69;
+  background: #f3ecff;
+  border-radius: 999px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .cv-wrap {
+    grid-template-columns: 1fr; /* una sola columna en tablet y celular */
+  }
+}
+
+@media (max-width: 575px) {
+  .cv-card {
+    padding: 24px 20px;
+  }
+  .timeline {
+    padding-left: 26px;
+  }
+  .timeline-item::before {
+    left: -26px;
+  }
+}
+
+/* ---------- Impresión (Ctrl + P para guardar como PDF) ---------- */
+@media print {
+  .main-nav,
+  .site-footer {
+    display: none;
+  }
+  .gallery-section,
+  .page-hero {
+    background: #fff;
+    padding: 12px 0;
+  }
+  .cv-card,
+  .page-hero-box {
+    box-shadow: none;
+    border: 1px solid #e6dcfb;
+    break-inside: avoid;
+  }
+  .cv-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+/* ---------- Encabezado del CV ---------- */
+
+.cv-name {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #2d1b69;
+}
+.cv-header {
+  background-color: #f3ecff;
+  padding: 24px 20px 0;
+}
+
+.cv-id-card {
+  position: relative; /* nueva */
+  z-index: 1; /* nueva: la sombra queda por encima de la sección siguiente */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 28px;
+  text-align: center;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(45, 27, 105, 0.15);
+}
+
+.cv-section {
+  background-color: #f3ecff; /* fondo propio, ya no depende de .gallery-section */
+  padding-top: 24px;
+  padding-bottom: 60px;
+}
+.nav-split {
+  position: relative; /* la lista se ubica respecto a este elemento */
+  display: flex;
+  align-items: center;
+}
+
+.nav-split > .nav-link:first-child {
+  padding-right: 0.2rem;
+}
+
+.nav-split .dropdown-toggle-split {
+  padding-left: 0.2rem;
+}
+
+/* El subrayado es solo del texto, no de la flecha */
+.nav-split .dropdown-toggle-split::before {
+  display: none;
+}
+
+/* La lista aparece justo debajo, alineada a la izquierda */
+.nav-split > .dropdown-menu {
+  top: 100%;
+  left: 0;
+  margin-top: 0;
+}
+
+/* Escritorio: la lista se abre al pasar el cursor */
+/* antes: @media (min-width: 992px) */
+@media (hover: hover) {
+  .nav-split:hover > .dropdown-menu,
+  .nav-split:focus-within > .dropdown-menu {
+    display: block;
+  }
+
+  .nav-split:hover .dropdown-toggle-split::after {
+    transform: rotate(180deg);
+  }
+}
+/* Menú colapsado (tablet y celular): la lista baja debajo del enlace */
+@media (max-width: 991.98px) {
+  .nav-split {
+    flex-wrap: wrap; /* permite que la lista pase a otra línea */
+  }
+
+  .nav-split > .dropdown-menu {
+    flex: 0 0 100%; /* ocupa toda la línea, debajo del texto y la flecha */
+    width: 100%;
+    margin-top: 0;
+    padding-left: 0.5rem;
+    background: #ffffff; /* se integra con el fondo lavanda del menú */
+    border: 1;
+  }
 }
